@@ -13,3 +13,11 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
+### Image References
+The following links point to the images used to demonstrate the results in the script:
+- Chinstrap: https://ebird.org/species/chipen2
+
+- Gentoo: https://birdfact.com/birds/gentoo-penguin
+
+- Adelie: https://ebird.org/species/adepen1
