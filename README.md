@@ -5,19 +5,27 @@ It includes data cleaning, model training, evaluation and saved model artifacts 
 
 ## Requirements
 
-- Python 3.10+
-- Dependencies listed in `requirements.txt`
+- Python 3.11+
+- uv
 
-Install dependencies:
+## Setup (uv)
+
+Create the virtual environment and install dependencies:
 
 ```bash
-pip install -r requirements.txt
+uv venv
+uv sync
 ```
 
-### Image References
+Run the app:
+
+```bash
+uv run uvicorn main:app --reload
+```
+
+## Image References
+
 The following links point to the images used to demonstrate the results in the script:
 - Chinstrap: https://ebird.org/species/chipen2
-
 - Gentoo: https://birdfact.com/birds/gentoo-penguin
-
 - Adelie: https://ebird.org/species/adepen1
