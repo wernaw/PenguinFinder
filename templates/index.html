@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Penguin Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<div class="card">
+    <div class="header">
+    <h2>Penguin Predictor</h2>
+     </div>
+
+    <input id="bill_length" type="number" step="0.1" placeholder="Bill length (mm)">
+    <input id="bill_depth" type="number" step="0.1" placeholder="Bill depth (mm)">
+    <input id="flipper_length" type="number" step="1" placeholder="Flipper length (mm)">
+
+    <button onclick="predict()">Predict</button>
+
+    <div class="result" id="result"></div>
+        <img id="penguin_image" src="" alt="" style="display:none; max-width:200px; margin-top:10px;">
+
+    <footer>
+        <div class="container">
+            <p>© 2026. All rights reserved.</p>
+        </div>
+</footer>
+</div>
+
+<script>
+async function predict() {
+    const data = {
+        bill_length_mm: parseFloat(document.getElementById("bill_length").value),
+        bill_depth_mm: parseFloat(document.getElementById("bill_depth").value),
+        flipper_length_mm: parseFloat(document.getElementById("flipper_length").value)
+    };
+
+    if (isNaN(data.bill_length_mm) || isNaN(data.bill_depth_mm) || isNaN(data.flipper_length_mm)) {
+        alert("Wprowadź wszystkie wartości!");
+        return;
+    }
+
+    const response = await fetch("/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    document.getElementById("result").innerHTML =
+        `<b>Prediction:</b> <a href="${result.info_url}" target="_blank">${result.prediction}</a>`;
+
+    const img = document.getElementById("penguin_image");
+    img.src = window.location.origin + result.image_url;
+    img.alt = result.prediction;
+    img.style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
