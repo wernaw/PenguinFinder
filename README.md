@@ -1,5 +1,7 @@
 # Penguin Finder
 
+![Penguins](cover.png)
+
 This is a simple FastAPI application that uses a Random Forest model trained on the Palmer Penguins dataset to predict penguin species from physical measurements.
 It includes data cleaning, model training, evaluation and saved model artifacts for later predictions.
 
