@@ -50,9 +50,9 @@ def predict(data: DataInput):
     }
 
     image_map = {
-        "Adelie": "image/adelie.jpeg",
-        "Chinstrap": "image/chinstrap.jpeg",
-        "Gentoo": "image/gentoo.jpeg"
+        "Adelie": "/static/adelie.jpeg",
+        "Chinstrap": "/static/chinstrap.jpeg",
+        "Gentoo": "/static/gentoo.jpeg"
     }
 
     link_map = {
