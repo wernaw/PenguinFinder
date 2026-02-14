@@ -27,5 +27,5 @@ uv run uvicorn main:app --reload
 
 The following links point to the images used to demonstrate the results in the script:
 - Chinstrap: https://ebird.org/species/chipen2
-- Gentoo: https://birdfact.com/birds/gentoo-penguin
+- Gentoo: https://ebird.org/species/genpen1
 - Adelie: https://ebird.org/species/adepen1
