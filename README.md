@@ -23,6 +23,34 @@ Run the app:
 uv run uvicorn main:app --reload
 ```
 
+## Dependency updates (uv)
+
+Add a new dependency:
+
+```bash
+uv add <package>
+```
+
+Update the lockfile after changes:
+
+```bash
+uv lock
+```
+
+## Model and data
+
+Model: Random Forest classifier trained on the Palmer Penguins dataset. Random Forest is an ensemble of many decision trees whose combined votes improve accuracy and reduce overfitting. The trained model is stored in `penguin_rf_model.pkl` and loaded at runtime.
+
+Input features:
+- bill_length_mm (float)
+- bill_depth_mm (float)
+- flipper_length_mm (float)
+
+Output:
+- predicted species label (Adelie, Chinstrap, Gentoo)
+- image URL for the predicted species
+- info URL linking to the species page
+
 ## Image References
 
 The following links point to the images used to demonstrate the results in the script:

@@ -8,7 +8,7 @@ import pandas as pd
 
 app = FastAPI(
     title="rf_model API",
-    description="API z wyuczonym modelem",
+    description="API with trained model",
     version="1.0"
 )
 
